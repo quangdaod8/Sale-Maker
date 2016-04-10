@@ -1,25 +1,155 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Fn2-Dn-h5g">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sale Maker-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController title="Sale Maker" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18c-h1-xbQ">
+                                <rect key="frame" x="-4" y="64" width="328" height="328"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="18c-h1-xbQ" secondAttribute="height" multiplier="1:1" id="OuI-WU-O22"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtN-aw-g6u">
+                                <rect key="frame" x="266" y="393" width="38" height="32"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                <state key="normal" title="Gợi ý"/>
+                                <connections>
+                                    <action selector="btnHintAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="stt-kG-xNN"/>
+                                    <segue destination="dg9-hL-HI6" kind="show" id="Tew-Vz-Y2e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNo-4y-Le7">
+                                <rect key="frame" x="16" y="398" width="22" height="22"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnResetAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fav-u0-KWy"/>
+                                </connections>
+                            </button>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szM-XR-2ge" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="430" width="320" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="eIq-fs-x1x"/>
+                                    <constraint firstAttribute="height" constant="50" id="lnT-w3-eit"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hT2-2O-jMq">
+                                <rect key="frame" x="93" y="392" width="134" height="33"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <state key="normal" title="Nhập Thông Tin">
+                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnEnterAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CDC-cB-1Qr"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JtN-aw-g6u" firstAttribute="centerY" secondItem="hT2-2O-jMq" secondAttribute="centerY" id="3OP-t4-L4o"/>
+                            <constraint firstItem="18c-h1-xbQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8Q6-MP-xaP"/>
+                            <constraint firstItem="hT2-2O-jMq" firstAttribute="top" secondItem="18c-h1-xbQ" secondAttribute="bottom" id="9oZ-rE-Zlx"/>
+                            <constraint firstItem="lNo-4y-Le7" firstAttribute="centerY" secondItem="hT2-2O-jMq" secondAttribute="centerY" id="D9c-Px-9s5"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="lNo-4y-Le7" secondAttribute="leading" id="I7s-2d-v8A"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="szM-XR-2ge" secondAttribute="bottom" id="IqC-F4-4DK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hT2-2O-jMq" secondAttribute="trailing" constant="77" id="TME-zJ-Yuz"/>
+                            <constraint firstItem="szM-XR-2ge" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UQy-M7-QX8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JtN-aw-g6u" secondAttribute="trailing" id="cx2-YN-tt9"/>
+                            <constraint firstItem="hT2-2O-jMq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eas-pn-ADc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="18c-h1-xbQ" secondAttribute="trailing" constant="-20" id="gIR-0f-uti"/>
+                            <constraint firstItem="18c-h1-xbQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="v0w-BQ-LFG"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="F0a-Q0-rzh">
+                        <barButtonItem key="backBarButtonItem" title=" " id="XBQ-9g-ikZ"/>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="banner" destination="szM-XR-2ge" id="fOt-tu-WfF"/>
+                        <outlet property="btnEnterInfo" destination="hT2-2O-jMq" id="mgU-Gs-NRM"/>
+                        <outlet property="btnHint" destination="JtN-aw-g6u" id="whn-wf-n7D"/>
+                        <outlet property="productView" destination="18c-h1-xbQ" id="aH4-C5-RqG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="825" y="313"/>
+        </scene>
+        <!--Gợi ý-->
+        <scene sceneID="dau-0N-gAg">
+            <objects>
+                <viewController title="Gợi ý" id="dg9-hL-HI6" customClass="HintViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jTN-xo-3cP"/>
+                        <viewControllerLayoutGuide type="bottom" id="A4T-aB-kAM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R9o-2T-Svz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d21-00-ZNG">
+                                <rect key="frame" x="16" y="4" width="288" height="468"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A4T-aB-kAM" firstAttribute="top" secondItem="d21-00-ZNG" secondAttribute="bottom" constant="8" id="7j4-3f-Keh"/>
+                            <constraint firstItem="d21-00-ZNG" firstAttribute="top" secondItem="jTN-xo-3cP" secondAttribute="bottom" constant="-60" id="O2J-H5-Dte"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d21-00-ZNG" secondAttribute="trailing" id="ao1-dW-0ly"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="d21-00-ZNG" secondAttribute="leading" id="mEr-gU-BkG"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="txtHint" destination="d21-00-ZNG" id="Dnt-xB-Wl0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="96B-nC-uQI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1240" y="313"/>
+        </scene>
+        <!--Sale Maker-->
+        <scene sceneID="J3B-Rz-c79">
+            <objects>
+                <navigationController title="Sale Maker" automaticallyAdjustsScrollViewInsets="NO" id="Fn2-Dn-h5g" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cI0-HA-QVh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="d2d-86-jAN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NKJ-lD-JUd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="431" y="313"/>
         </scene>
     </scenes>
 </document>
